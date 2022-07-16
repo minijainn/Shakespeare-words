@@ -12,9 +12,10 @@ var txtInput=document.querySelector("#txt-input");
 var outputdiv=document.querySelector("#output");
 
 //wire fetch call in the app
-const serverurl="https://api.funtranslations.com/translate/minion.json";
-function geturl(text){
-    return serverurl +"?text="+text;
+const serverurl="https://v2.jokeapi.dev/joke/Any";
+function geturl(){
+    return serverurl;
+    //  +"?text="+text;
 }
 function errorHandler(error){
     console.log("error");
@@ -23,9 +24,9 @@ function errorHandler(error){
 function translator(){
     // console.log(txtInput.value);
     //  outputdiv.innerText="translated:"+ txtInput.value;
-    var usertext = txtInput.value;
-    fetch(geturl(usertext)).then(response => response.json()).then(json=>{
-        var translated=json.contents.translated;
+    // var usertext = txtInput.value;
+    fetch(geturl()).then(response => response.json()).then(json=>{
+         var translated=json.delivery;
         outputdiv.innerText=translated;
     })
     .catch(errorHandler);
