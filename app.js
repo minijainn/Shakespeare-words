@@ -12,7 +12,7 @@ var txtInput=document.querySelector("#txt-input");
 var outputdiv=document.querySelector("#output");
 
 //wire fetch call in the app
-const serverurl="https://api.funtranslations.com/translate/minion.json";
+const serverurl="https://api.funtranslations.com/translate/shakespeare.json";
 function geturl(text){
     return serverurl +"?text="+text;
 }
